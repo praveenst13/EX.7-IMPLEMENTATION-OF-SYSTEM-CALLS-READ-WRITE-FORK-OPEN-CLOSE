@@ -1,39 +1,39 @@
 # EX.7-IMPLEMENTATION-OF-SYSTEM-CALLS-READ-WRITE-FORK-OPEN-CLOSE
 
-AIM:
+## AIM:
   C program using open, read, write, close , create , fork() system calls.
 ## THEORY:
-There are 5 basic system calls that Unix provides for file I/O.
+   There are 5 basic system calls that Unix provides for file I/O.
 <br>
-1.create: Used to Create a new empty file
+   1.create: Used to Create a new empty file
 <br>
-Syntax : int create(char *filename, mode_t mode)
+   Syntax : int create(char *filename, mode_t mode)
 <br>
-filename : Name of the file which you want to create
+   filename : Name of the file which you want to create
 <br>
-mode : Indicates permissions of new file.
+   mode : Indicates permissions of new file.
 <br>
-open: Used to Open the file for reading, writing or both. Syntax: int open(char *path, int flags [ , int mode ] );
+   open: Used to Open the file for reading, writing or both. Syntax: int open(char *path, int flags [ , int mode ] );
 <br>
-Path : Path to file which you want to use
+   Path : Path to file which you want to use
 <br>
-Flags : How you like to use ?
+   Flags : How you like to use ?
 <br>
-O_RDONLY: read only, O_WRONLY: write only, O_RDWR: read and write, O_CREAT: create file if it doesn’t exist, O_EXCL: prevent creation if it already exists
+   O_RDONLY: read only, O_WRONLY: write only, O_RDWR: read and write, O_CREAT: create file if it doesn’t exist, O_EXCL: prevent creation if it already exists
 <br>
-close: Tells the operating system you are done with a file descriptor and Close the file which pointed by fd. Syntax: int close(int fd); fd :file descriptor
+   close: Tells the operating system you are done with a file descriptor and Close the file which pointed by fd. Syntax: int close(int fd); fd :file descriptor
 <br>
-read: From the file indicated by the file descriptor fd, the read() function reads cnt bytes of input into the memory area indicated by buf. A successful read() updates the access time for the file. Syntax: int read(int fd, char *buf, int size);
+   read: From the file indicated by the file descriptor fd, the read() function reads cnt bytes of input into the memory area indicated by buf. A successful read() updates the access time for the file. Syntax: int read(int fd, char *buf, int size);
 <br>
-fd: file descripter buf: buffer to read data from cnt: length of buffer
+   fd: file descripter buf: buffer to read data from cnt: length of buffer
 <br>
-write: Writes cnt bytes from buf to the file or socket associated with fd. cnt should not be greater than INT_MAX (defined in the limits.h header file). If cnt is zero, write() simply returns 0 without attempting any other action. Syntax: int write(int fd, char *buf, int size);
+   write: Writes cnt bytes from buf to the file or socket associated with fd. cnt should not be greater than INT_MAX (defined in the limits.h header file). If cnt is zero, write() simply returns 0 without attempting any   other action. Syntax: int write(int fd, char *buf, int size);
 <br>
-fd: file descripter buf: buffer to write data to cnt: length of buffer
+   fd: file descripter buf: buffer to write data to cnt: length of buffer
 <br>
-*File descriptor is integer that uniquely identifies an open file of the process.
+   *File descriptor is integer that uniquely identifies an open file of the process.
 <br>
-ALGORITHM:
+## ALGORITHM:
    Start the program.
 <br>
    Open a file for O_RDWR for R/W,O_CREATE for creating a file ,O_TRUNC for truncate a file.
@@ -48,7 +48,7 @@ ALGORITHM:
 <br>
    Stop the program.
 <br>
-PROGRAM:
+## PROGRAM:
 ```C
 #include<sys/stat.h> 
 #include<stdio.h> 
@@ -76,8 +76,9 @@ return 0;
 }
 ```
 
-OUTPUT:
+## OUTPUT:
 ![image](https://github.com/praveenst13/EX.7-IMPLEMENTATION-OF-SYSTEM-CALLS-READ-WRITE-FORK-OPEN-CLOSE/assets/118787793/97eff2a6-925a-46ee-a6ea-96486c9f65cb)
 
 
-RESULT:
+## RESULT:
+Thus, open, read, write, close , create , fork() system calls implemented successfully using c program.
